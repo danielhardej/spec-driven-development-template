@@ -1,0 +1,88 @@
+name: Story (spec-ready)
+description: Capture a story with what an agent needs before planning.
+title: "[Story]: "
+labels:
+  - story
+  - needs-plan
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        A story is not a spec. Fill in what you can. Open questions are fine, but answer them before planning. Use docs/specs/TEMPLATE.md when the story needs a separate spec.
+
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      placeholder: As a … I want … so that …
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Use Given / When / Then, one behaviour per criterion, and include the unhappy path.
+      value: |-
+        AC-1: Given …
+        When …
+        Then …
+
+        AC-2: Given …
+        When …
+        Then …
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Reference the brief, path rules, AGENTS.md or ADRs. Do not repeat them.
+      placeholder: "- Constraint — source"
+
+  - type: textarea
+    id: non-goals
+    attributes:
+      label: Non-goals
+      description: List what must not change or be included.
+      placeholder: "- Out-of-scope behaviour, file or system"
+    validations:
+      required: true
+
+  - type: textarea
+    id: open-questions
+    attributes:
+      label: Open questions
+      description: List business decisions the agent must not guess.
+      placeholder: "- Question — owner — answer or Pending"
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: Map each criterion to its test or check, then include the repo-level check.
+      placeholder: |-
+        AC-1: Test or check
+        Repo: Verification command or check
+
+  - type: dropdown
+    id: size
+    attributes:
+      label: Expected size
+      options:
+        - One slice, one PR
+        - Needs slicing (2 to 3 PRs)
+        - "Too big: split the story first"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Ready for planning check
+      options:
+        - label: Every criterion is observable and testable.
+        - label: The criteria include an unhappy path.
+        - label: Non-goals are listed.
+        - label: Open questions are answered or owned.
