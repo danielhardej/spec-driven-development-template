@@ -15,6 +15,15 @@ Turn a user story into a spec, a scored plan and PR-sized slices before any code
 
 Also included: the [plan format](docs/plan-format.md), the [PR template](.github/pull_request_template.md), [plan mode on each surface](docs/plan-mode-surfaces.md), the [guided exercise](exercises/bill-so-far-this-month.md) and the [30-day champion plan](docs/champion-30-days.md).
 
+## Issue templates
+
+Use these forms to capture the story and specification as separate artefacts. Answer or assign open questions before moving to planning.
+
+| Template | What it captures | How to use it |
+| --- | --- | --- |
+| [Story (spec-ready)](.github/ISSUE_TEMPLATE/story.yml) | The user story, initial criteria, constraints, non-goals, questions, verification and expected size. | Start here for a new story. Fill in what you know, include an unhappy path, and use the readiness check to find gaps before writing the specification. |
+| [Specification](.github/ISSUE_TEMPLATE/specification.yml) | The approved what and why: criteria, scope, non-goals, decisions, verification and behaviour slices. | Link the story, resolve or assign business decisions, and set the status to Ready for plan only when the readiness check is complete. |
+
 ## The loop
 
 1. **Story:** capture the need in the user's words.
@@ -27,7 +36,7 @@ This is not waterfall. Keep one page per story, and change the spec as you learn
 
 ## Quick start (about 15 minutes)
 
-1. Copy [docs/specs/TEMPLATE.md](docs/specs/TEMPLATE.md), [.github/ISSUE_TEMPLATE/story.yml](.github/ISSUE_TEMPLATE/story.yml) and [.github/pull_request_template.md](.github/pull_request_template.md) into your repo as individual files. Do not overwrite an existing `.github/` folder or PR template; merge the content instead.
+1. Copy [docs/specs/TEMPLATE.md](docs/specs/TEMPLATE.md), the [story form](.github/ISSUE_TEMPLATE/story.yml), the [specification form](.github/ISSUE_TEMPLATE/specification.yml) and [.github/pull_request_template.md](.github/pull_request_template.md) into your repo as individual files. Do not overwrite an existing `.github/` folder or PR template; merge the content instead.
 2. Create the `story` and `needs-plan` labels. Labels named by an issue form must already exist.
 3. Pick one real story.
 4. Work through prompts [01 to 05](prompts/README.md).
